@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import "./App.css"
+import LineChart from './Line'
+import DoughnutPie from './DoughnutPie'
+import Mixed from './Mixed';
+import RadarChart from './Radar';
+import PieChart from './Pie';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className='body'>
+      <h1>Analytics</h1>
+    
+    <div className='App graphs container'>
 
-export default App;
+    <div className='graph' id='line'>
+    < LineChart />
+    </div>  
+     <div className='graph' id='dp'>
+     <DoughnutPie />
+     </div>
+     <div>
+      <PieChart className='graph' id='pie'/>
+     </div>
+     
+     <div className='graph' id='mixed'>
+     <Mixed/>
+     </div> 
+      <div className='graph' id='radar' >
+      <RadarChart />
+      </div>
+
+    </div></div>
+  )
+}
+export default App
